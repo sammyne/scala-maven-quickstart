@@ -1,12 +1,13 @@
 package com.github.sammyne
 
 /**
- * @author ${user.name}
+ * @author
+ *   ${user.name}
  */
 object App {
-  
-  def main(args : Array[String]) {
-    println( "Hello World!" )
+
+  def main(args: Array[String]) {
+    println("Hello World!")
 
     greeter.sayHello("sammyne")
   }

@@ -22,6 +22,7 @@
     <encoding>UTF-8</encoding>
     <scala.version>2.12.10</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
+    <spotless.version>2.30.0</spotless.version>
   </properties>
 
   <dependencies>
@@ -135,6 +136,28 @@
         </executions>
         <configuration>
           <mainClass>com.github.sammyne.App</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- ref: https://github.com/diffplug/spotless/tree/main/plugin-maven#scala -->
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>${spotless.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <scala>
+          <scalafmt>
+            <!-- <version>3.6.1</version> -->             <!-- optional -->
+            <file>${project.basedir}/.scalafmt.conf</file> <!-- optional -->
+            <scalaMajorVersion>${scala.binary.version}</scalaMajorVersion> <!-- optional -->
+          </scalafmt>
+          </scala>
         </configuration>
       </plugin>
     </plugins>
