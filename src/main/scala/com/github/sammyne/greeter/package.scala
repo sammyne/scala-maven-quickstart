@@ -1,3 +1,4 @@
+/* Copyright (C) 2023 sammyne. All rights reserved. */
 package com.github.sammyne
 
 package object greeter {

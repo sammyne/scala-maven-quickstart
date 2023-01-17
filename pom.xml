@@ -152,11 +152,19 @@
         </executions>
         <configuration>
           <scala>
-          <scalafmt>
-            <!-- <version>3.6.1</version> -->             <!-- optional -->
-            <file>${project.basedir}/.scalafmt.conf</file> <!-- optional -->
-            <scalaMajorVersion>${scala.binary.version}</scalaMajorVersion> <!-- optional -->
-          </scalafmt>
+            <scalafmt>
+              <!-- <version>3.6.1</version> -->             <!-- optional -->
+              <file>${project.basedir}/.scalafmt.conf</file> <!-- optional -->
+              <scalaMajorVersion>${scala.binary.version}</scalaMajorVersion> <!-- optional -->
+            </scalafmt>
+
+            <licenseHeader>
+              <!-- or <file>${project.basedir}/license-header</file> -->
+              <content>/* Copyright (C) $YEAR sammyne. All rights reserved. */</content>
+              <delimiter>package </delimiter> <!--
+                note the 'package ' argument - this is a regex which identifies the top of the file, be careful that all
+                of your sources have a package declaration, or pick a regex which works better for your code -->
+            </licenseHeader>
           </scala>
         </configuration>
       </plugin>
