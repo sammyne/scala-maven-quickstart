@@ -41,3 +41,13 @@ mvn -DskipTests=true spotless:check
 ```bash
 mvn -DskipTests=true spotless:apply
 ```
+
+### 生成 ScalaDoc 风格的文档
+
+> 相关插件：org.apache.maven.plugins/maven-site-plugin@3.12.1
+
+```bash
+mvn scala:doc
+```
+
+生成的静态文件路径为 target/site/scaladocs。

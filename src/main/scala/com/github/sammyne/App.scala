@@ -2,8 +2,10 @@
 package com.github.sammyne
 
 /**
+ * A simple demo app.
+ * 
  * @author
- *   ${user.name}
+ *   sammyne
  */
 object App {
 

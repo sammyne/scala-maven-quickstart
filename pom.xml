@@ -162,10 +162,37 @@
               <!-- or <file>${project.basedir}/license-header</file> -->
               <content>/* Copyright (C) $YEAR sammyne. All rights reserved. */</content>
               <delimiter>package </delimiter> <!--
-                note the 'package ' argument - this is a regex which identifies the top of the file, be careful that all
-                of your sources have a package declaration, or pick a regex which works better for your code -->
+                note the 'package ' argument -
+              this is a regex which identifies the top of the file, be careful that all
+                of
+              your sources have a package declaration, or pick a regex which works better for your
+              code -->
             </licenseHeader>
           </scala>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.1</version>
+        <configuration>
+          <reportPlugins>
+            <plugin>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+              <version>3.4.2</version>
+            </plugin>
+            <plugin>
+              <groupId>net.alchim31.maven</groupId>
+              <artifactId>scala-maven-plugin</artifactId>
+              <version>4.8.0</version>
+              <configuration>
+                <jvmArgs>
+                  <jvmArg>-Xms64m</jvmArg>
+                  <jvmArg>-Xmx1024m</jvmArg>
+                </jvmArgs>
+              </configuration>
+            </plugin>
+            ... </reportPlugins>
         </configuration>
       </plugin>
     </plugins>
